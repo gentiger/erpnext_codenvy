@@ -1,6 +1,6 @@
 #!/bin/bash
 apt-get update && apt-get upgrade -y && apt-get -y autoremove && apt-get clean
-python install.py --production
-rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/ /home/$FRAPPE_USER/.cache
+python install.py --develop --user $FRAPPE_USER
+rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/ /projects/.cache
 
 exit 0
