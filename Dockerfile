@@ -8,7 +8,8 @@ ENV FRAPPE_USER=frappe \
 RUN useradd $FRAPPE_USER && mkdir /projects && chown -R $FRAPPE_USER.$FRAPPE_USER /projects
 WORKDIR /projects
 RUN wget https://raw.githubusercontent.com/frappe/bench/master/playbooks/install.py && sed -i "s/'', ''/'$MYSQL_PASSWORD', '$ADMIN_PASSWORD'/g" install.py
-RUN python install.py --develop --user $FRAPPE_USER
+COPY setup.sh /
+RUN bash /setup.sh
 COPY all.conf /etc/supervisor/conf.d/
 EXPOSE 80 25
 
