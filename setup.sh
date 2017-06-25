@@ -4,3 +4,4 @@ python install.py --production
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/ /home/$FRAPPE_USER/.cache
 
 exit 0
+
