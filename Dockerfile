@@ -1,4 +1,4 @@
-FROM eclipse/ubuntu_jdk8
+FROM lukptr/ubuntu:16.04-23112016
 
 ENV FRAPPE_USER=frappe \
     MYSQL_PASSWORD=12345678 \
