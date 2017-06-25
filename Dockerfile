@@ -13,3 +13,5 @@ RUN bash /setup.sh
 COPY all.conf /etc/supervisor/conf.d/
 EXPOSE 80 25
 
+CMD ["/usr/bin/supervisord","-n"]
+
